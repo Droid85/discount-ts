@@ -7,6 +7,8 @@ function discountCalc(discountCode: number): number {
 	let oddSum: number = 0;
 	const ERROR_MESSAGE: string = "[INCORECT DISCOUNT CODE!]";
 
+	//	Add each number from string to arrey
+
 	for(let i: number = 0; i < 8; i++) {
 		let buff: number = d % 10;
 
@@ -26,7 +28,10 @@ function discountCalc(discountCode: number): number {
 
 	for (let i = 0; i < discountDigitsArr.length; i++) {
 		for (let j = i + 1; j <= i + 1; j++) {
-			if (discountDigitsArr[i] % 2 !== 0 && discountDigitsArr[j] % 2 !== 0 && discountDigitsArr[j + 1] % 2 === 0) {
+			if (discountDigitsArr[i] % 2 !== 0 &&
+				discountDigitsArr[j] % 2 !== 0 &&
+				discountDigitsArr[j + 1] % 2 === 0
+				) {
 				if(discountDigitsArr[i] < discountDigitsArr[j]) {
 					pair += 2;
 				} else {

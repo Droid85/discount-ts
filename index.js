@@ -5,6 +5,8 @@ function discountCalc(discountCode) {
     var pair = 0;
     var evenSum = 0;
     var oddSum = 0;
+    var ERROR_MESSAGE = "[INCORECT DISCOUNT CODE!]";
+    //	Add each number from string to arrey
     for (var i = 0; i < 8; i++) {
         var buff = d % 10;
         if (i < 8 && buff) {
@@ -14,12 +16,14 @@ function discountCalc(discountCode) {
     }
     discountDigitsArr.reverse();
     if (discountDigitsArr.length !== 8) {
-        console.error('[INCORECT DISCOUNT CODE!]');
+        console.error(ERROR_MESSAGE);
         return discount;
     }
     for (var i = 0; i < discountDigitsArr.length; i++) {
         for (var j = i + 1; j <= i + 1; j++) {
-            if (discountDigitsArr[i] % 2 !== 0 && discountDigitsArr[j] % 2 !== 0 && discountDigitsArr[j + 1] % 2 === 0) {
+            if (discountDigitsArr[i] % 2 !== 0 &&
+                discountDigitsArr[j] % 2 !== 0 &&
+                discountDigitsArr[j + 1] % 2 === 0) {
                 if (discountDigitsArr[i] < discountDigitsArr[j]) {
                     pair += 2;
                 }
